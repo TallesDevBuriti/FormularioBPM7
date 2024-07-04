@@ -22,9 +22,9 @@ function _init(data, info) {
         info.getInfoFromProcessVariables().then(function(data) {           
             let objectsArray = _formatStringToArrayObject(data);
 
-            if(objectsArray.length !== 0) {
+            // if(objectsArray.length !== 0) {
                 _showViewProps(objectsArray);
-            }
+            // }
         })
     });
 }
