@@ -22,9 +22,9 @@ function _init(data, info) {
         info.getInfoFromProcessVariables().then(function(data) {           
             let objectsArray = _formatStringToArrayObject(data);
 
-            // if(objectsArray.length !== 0) {
+            if(objectsArray.length !== 0) {
                 _showViewProps(objectsArray);
-            // }
+            }
         })
     });
 }
@@ -53,8 +53,6 @@ function _saveData(data, info) {
         dadosProprietarios.push({nomeProp, contatoProp, emailProp});
     })
 
-    console.log(blocksProp)
-    
     newData.props = dadosProprietarios;
 
     // Aba 3
@@ -110,7 +108,7 @@ function _formatStringToArrayObject(data) {
 function _showViewProps(props) { 
     $('#box-proprietario').remove();
 
-    objectsArray.forEach(function(item) {
+    props.forEach(function(item) {
         var customHtml = `
         <div id="box-proprietario" class="border rounded mt-3 p-3">
             <div class="d-flex justify-content-end mb-3">
